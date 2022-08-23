@@ -1,0 +1,95 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-image: url('img/5_background/layers/air.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    padding: 0;
+
+} 
+
+canvas {
+    background-color: black;
+    position: relative;
+   
+}   
+
+#overlay {
+    background-image: url('img/9_intro_outro_screens/start/startscreen_1.png');
+    background-size: cover;
+    background-position: right;
+    width: 720px;
+    height: 480px; 
+    display: flex; 
+    justify-content: center;
+    position: absolute;
+    top: 0px;
+}
+
+#container {
+    position: relative;
+}
+
+button {
+    position: absolute;
+    z-index: 1;
+    top: 13%;
+    left: 48%;
+    text-align: center;
+    background-color: rgba(255, 222, 0, 0.9);
+    border: 1px solid #000000;
+    box-shadow: 6px 6px 0px #000000;
+    transform: skewX(-15deg) translate(-50%, -50%);
+    font-size: 30px;
+    padding: 6px;
+    letter-spacing: 6px;
+}
+
+.control-description{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    left: 20px;
+}
+
+.control-description span {
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.image-control-description{
+    height: 50px;
+    width: 52px;
+}
+
+
+
+
+
+
+
+.d-none{
+    display: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
