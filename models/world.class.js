@@ -158,12 +158,12 @@ class World{
             setTimeout(() => {
                 let screen = new Endscreen();
                 this.endscreen.push(screen);
+    
             }, 200);
             // setTimeout(this.run.bind(this), 100 );
             console.log('tot');
           }
         }
-
 
         draw(){
 
@@ -192,6 +192,11 @@ class World{
             this.addToMap(this.coinsbar);
             
             this.addObjectsToMap(this.endscreen);
+            // this.addObjectsToMap(this.win);
+
+            if (this.energyboss == 0) {
+                this.addToMap(this.win);
+            }
             this.ctx.translate(this.camera_x, 0); // Forwards
 
             this.ctx.translate(-this.camera_x, 0);
