@@ -2,10 +2,10 @@ class Level {
     enemies;
     clouds;
     backgroundObjects;
-    level_end_x = 3600;
+    level_end_x = 3200;
     bottle;
     coin;
-    endoss;
+    endboss;
 
     constructor(enemies, endboss,  clouds, backgroundObjects, bottle, coin){  // FUnktion wird am Anfang aufgerufen, wenn level erstellt wird oder zB chicken, enemies
         this.enemies = enemies;

@@ -47,6 +47,7 @@ button {
     font-size: 30px;
     padding: 6px;
     letter-spacing: 6px;
+    cursor: pointer;
 }
 
 .control-description{

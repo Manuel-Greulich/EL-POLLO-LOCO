@@ -16,7 +16,10 @@ class World{
     hurt_sound = new Audio('Audio/hurt.mp3');
     throw_sound = new Audio('Audio/throw.mp3');
     game_sound = new Audio('Audio/gamesound.mp3');
-    // endscreen = new Endscreen();
+    // endboss = this.level.enemies.find(e => e instanceof Endboss);
+        // endscreen = new Endscreen;
+    // win = new Win();
+   
     
 
     
@@ -53,6 +56,7 @@ class World{
             this.charackterPickUpBottle();  
             this.charackterPickUpCoins();
             this.gameOver();
+            this.gameWin();
             // this.characterBoss();
 
         },  200); //200ms 
@@ -92,8 +96,6 @@ class World{
                 console.log('funktioniert');
                 let endboss = this.level.endboss[0];
                 if (endboss.isColliding(bottle)) {
-                    // this.hits += 20; 
-                    // enemy.endBossIsHit();
                     endboss.boss2 = true;
                     endboss.energyboss -= 20;
                     console.log(endboss.energyboss);
@@ -103,8 +105,8 @@ class World{
        
     }
 
-
-    // kontrolliert ob elemente miteinander kolidieren
+ 
+   // kontrolliert ob elemente miteinander kolidieren
     
     checkCollision(){
         this.level.enemies.forEach( (enemy) => {
@@ -148,8 +150,23 @@ class World{
         }
 
         endscreen = [];
+        winscreen = [];
+
+        gameWin(){
+            if(this.level.endboss[0].energyboss == 0){
+                setTimeout(() => {
+                let screen2 = new Win();
+                this.winscreen.push(screen2);
+
+        
+                }, 200);
+                console.log('win');
+            }
+        }
+    
+        
         gameOver() {
-          if(this.character.energy == 0 || this.level.endboss[0].energyboss == 0){
+          if(this.character.energy == 0){
 
             clearInterval(this.stopInterval);
             keyboard = false;
@@ -160,7 +177,6 @@ class World{
                 this.endscreen.push(screen);
     
             }, 200);
-            // setTimeout(this.run.bind(this), 100 );
             console.log('tot');
           }
         }
@@ -178,7 +194,7 @@ class World{
             
             this.addObjectsToMap(this.level.clouds);
 
-            this.addToMap(this.character);  
+            this.addToMap(this.character); 
         
             this.addObjectsToMap(this.level.enemies);
             this.addObjectsToMap(this.throwableObjects);
@@ -192,22 +208,29 @@ class World{
             this.addToMap(this.coinsbar);
             
             this.addObjectsToMap(this.endscreen);
-            // this.addObjectsToMap(this.win);
-
-            if (this.energyboss == 0) {
-                this.addToMap(this.win);
-            }
+            this.addObjectsToMap(this.winscreen);    
+            
+            
             this.ctx.translate(this.camera_x, 0); // Forwards
-
             this.ctx.translate(-this.camera_x, 0);
-
-
+           
             // draw() wird immmer weider aufgerufen
             let self = this;
             requestAnimationFrame(function(){
                 self.draw();
             }); 
+           
     }
+
+    // startScreenEndScreen() {
+    //     if (this.character.energy == 0) {
+    //         this.addToMap(this.endscreen);
+    //     }
+    //     if (this.endboss.energyboss == 0) {
+    //         this.addToMap(this.win);
+    //     }
+    // }
+
 
     addObjectsToMap(objects){
         objects.forEach(o => {
