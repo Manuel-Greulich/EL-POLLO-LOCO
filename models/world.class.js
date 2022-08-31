@@ -16,14 +16,12 @@ class World{
     hurt_sound = new Audio('Audio/hurt.mp3');
     throw_sound = new Audio('Audio/throw.mp3');
     game_sound = new Audio('Audio/gamesound.mp3');
-    // endboss = this.level.enemies.find(e => e instanceof Endboss);
-        // endscreen = new Endscreen;
-    // win = new Win();
+    coins_collect_sound = new Audio('Audio/coins.mp3');
+    endboss_sound = new Audio('Audio/endboss.mp3')
+    win = false;
+    lose = false;
    
-    
 
-    
-    
 
     constructor(canvas, keyboard){
         this.ctx = canvas.getContext('2d');
@@ -98,6 +96,7 @@ class World{
                 if (endboss.isColliding(bottle)) {
                     endboss.boss2 = true;
                     endboss.energyboss -= 20;
+                    this.endboss_sound.play();
                     console.log(endboss.energyboss);
                     this.throwableObjects.splice(0, 1);    
                 }
@@ -143,6 +142,8 @@ class World{
             this.level.coin.forEach((coin, index) => {
                 if (this.character.isColliding(coin)) {
                     this.character.hitCoins();
+                    this.coins_collect_sound.play();
+                    this.coins_collect_sound.volume = 0.2;
                     this.level.coin.splice(index, 1);
                     this.coinsbar.setPercentage(this.character.coin);
                 };
@@ -157,6 +158,7 @@ class World{
                 setTimeout(() => {
                 let screen2 = new Win();
                 this.winscreen.push(screen2);
+                this.win = true;
 
         
                 }, 200);
@@ -175,6 +177,7 @@ class World{
             setTimeout(() => {
                 let screen = new Endscreen();
                 this.endscreen.push(screen);
+                this.lose = true;
     
             }, 200);
             console.log('tot');

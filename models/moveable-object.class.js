@@ -9,7 +9,6 @@ class MoveableObject extends DrawableObject {
     lastHit = 0; 
     bottle = 0;
     coin = 0;
-    coins_collect_sound = new Audio('Audio/coins.mp3');
     
     
     
@@ -65,8 +64,7 @@ class MoveableObject extends DrawableObject {
     hitCoins() { 
         if(this.coin < 100) {
             this.coin += 20;
-            this.coins_collect_sound.play();
-            this.coins_collect_sound.volume = 0.2;
+            
         } 
     }
 

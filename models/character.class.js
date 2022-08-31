@@ -8,8 +8,8 @@ class Character extends MoveableObject {
     walking_sound = new Audio('Audio/walk.mp3');
     jumping_sound = new Audio('Audio/jump.mp3');
   
-    speed = 10;
-
+    speed = 8;
+    
     offsetX = 0;
     offsetY = 100;
     offsetW = 0;

@@ -13,7 +13,24 @@ function startGame() {
     document.getElementById('overlay').classList.add('d-none');
     document.getElementById('control-description').classList.add('d-none');
 
+    checkEndscreen()
+
+
     // document.getElementById('canvas').classList.remove('d-none');
+}
+
+function restart() {
+    location.reload();
+}
+
+function checkEndscreen() {
+
+    let checkwinlose =  setInterval(() => {
+      if (world.lose || world.win) {
+          document.getElementById('restart').classList.remove('d-none');
+        clearInterval (checkwinlose)
+      }
+    }, 200);
 }
 
 
