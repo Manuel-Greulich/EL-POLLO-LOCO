@@ -33,13 +33,14 @@ class World{
         this.run();
         this.bottleImpactEndboss();
         this.gameSound();
-    }
+    } 
 
     gameSound(){
         setInterval(() => {
             this.game_sound.play();
-            this.game_sound.volume = 0.5;
+            this.game_sound.volume = 0.3;
         }, 500);
+
     }
 
     setWorld(){
@@ -131,7 +132,6 @@ class World{
                         this.level.bottle.splice(index, 1);
                         this.bottles.setPercentage(this.character.bottle);
                         // console.log(this.character.bottle);
-        
                     }
                 });    
             }   
@@ -155,13 +155,13 @@ class World{
 
         gameWin(){
             if(this.level.endboss[0].energyboss == 0){
+
                 setTimeout(() => {
                 let screen2 = new Win();
                 this.winscreen.push(screen2);
                 this.win = true;
-
-        
-                }, 200);
+                
+                });
                 console.log('win');
             }
         }
@@ -224,16 +224,6 @@ class World{
             }); 
            
     }
-
-    // startScreenEndScreen() {
-    //     if (this.character.energy == 0) {
-    //         this.addToMap(this.endscreen);
-    //     }
-    //     if (this.endboss.energyboss == 0) {
-    //         this.addToMap(this.win);
-    //     }
-    // }
-
 
     addObjectsToMap(objects){
         objects.forEach(o => {

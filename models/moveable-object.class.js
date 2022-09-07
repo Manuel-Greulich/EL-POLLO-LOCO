@@ -65,7 +65,8 @@ class MoveableObject extends DrawableObject {
         if(this.coin < 100) {
             this.coin += 20;
             
-        } 
+        } else {
+        }
     }
 
     endBossIsHit() {
@@ -79,9 +80,9 @@ class MoveableObject extends DrawableObject {
     }
     
     hit(){
-        this.energy -= 5;
+        this.energy -= 10;
         if(this.energy < 0) {
-            this.energy = 0;
+            this.energy = 10;
         } else {
             this.lastHit = new Date().getTime(); 
         }
