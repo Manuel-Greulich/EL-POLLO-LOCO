@@ -1,5 +1,3 @@
-
-
 const level1 = new Level(
     [
         new chicken(),
@@ -8,6 +6,10 @@ const level1 = new Level(
         new chicken(),
         new chicken(),
         new chicken(),
+        new chicken(),
+        new chicken(),
+        new chicken(),
+
     ],
 
     [
@@ -77,22 +79,16 @@ const level1 = new Level(
 
     ],
 
-    [   //      width height
+    [  
        
-    // new Coins(600, 300),
-    // new Coins(700, 240),
-    // new Coins(800, 200),
-    // new Coins(900, 250),
-    // new Coins(1000, 300),
-
     new Coins(680, 300),
     new Coins(720, 260),
     new Coins(760, 220),
 
 
-    new Coins(1300, 260),
-    new Coins(1400, 260),
-    new Coins(1500, 260),
+    new Coins(1300, 200),
+    new Coins(1400, 150),
+    new Coins(1500, 200),
 
 
     new Coins(2100, 250),

@@ -38,8 +38,8 @@ class ThrowableObject extends MoveableObject {
     }
 
     throw(x, y){
-        this.speedY = 30;
-        this.applyGravity();  // das sich die flasche bewegt
+        this.speedY = 20;
+        this.applyGravity(); 
         setInterval( () => {
             this.x += 50;
 

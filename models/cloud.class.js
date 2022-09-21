@@ -20,7 +20,6 @@ class cloud extends MoveableObject{
         }, 1000 / 60);
     }
 
-    
 }
 
 

@@ -63,9 +63,7 @@ class MoveableObject extends DrawableObject {
 
     hitCoins() { 
         if(this.coin < 100) {
-            this.coin += 20;
-            
-        } else {
+            this.coin += 20;   
         }
     }
 
@@ -74,8 +72,6 @@ class MoveableObject extends DrawableObject {
         if (this.energy < 0) {
             this.energy = 0;
             this.isDead();
-        } else { 
-            // this.lastHit = new Date().getTime();
         }
     }
     
@@ -89,10 +85,6 @@ class MoveableObject extends DrawableObject {
     }
 
     isHurt(){
-        // let timepassed =  new Date().getTime() - this.lastHit; // differenz in millisekunden
-        // timepassed = timepassed / 1000; // Differenz in Sekunden
-        // return timepassed < 1;
-
         return this.boss2;
     }
 
@@ -103,7 +95,6 @@ class MoveableObject extends DrawableObject {
     }
 
     isDead(){
-        // this.lastHit = new Date().getTime(); 
         return this.energy == 0;
     }
 
@@ -111,8 +102,6 @@ class MoveableObject extends DrawableObject {
         return this.energyboss == 0;
     }
 
-
-    // endboss hit !?
 
     playAnimation(images){
         let i = this.currentImage % images.length; 

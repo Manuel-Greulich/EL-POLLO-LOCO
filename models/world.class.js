@@ -56,7 +56,6 @@ class World{
             this.charackterPickUpCoins();
             this.gameOver();
             this.gameWin();
-            // this.characterBoss();
 
         },  200); //200ms 
  

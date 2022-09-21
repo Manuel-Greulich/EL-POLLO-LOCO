@@ -29,7 +29,7 @@ class chicken extends MoveableObject{
       
 
         this.x = 240 + Math.random() * 2800; 
-        this.speed = 0.15 + Math.random() * 0.3; //chicken bekommen verschiedene Geschwindigkeit  
+        this.speed = 0.15 + Math.random() * 0.1; //chicken bekommen verschiedene Geschwindigkeit  
 
         this.animate();
 

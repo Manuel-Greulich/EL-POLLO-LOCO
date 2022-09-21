@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'zabars';
+    src:url('fonts/Zabars.ttf') format('truetype'); 
+} 
+
+
+
 body {
     height: 100vh;
     display: flex;
@@ -13,19 +20,6 @@ body {
 
 } 
 
-@font-face {
-    font-family: 'zabars';
-    src:url('fonts/Zabars.ttf') format('truetype'); 
-} 
-
-.headline{
-    position: absolute;
-    top: 20px;
-}
-
-.d-none {
-    display: none !important;
-  }
 
 canvas {
     background-color: black;
@@ -38,11 +32,24 @@ h1{
     font-size: 48px;
     letter-spacing: 3px;
     text-shadow: 2px 2px 8px rgba(0,0,0, 0.5);
+    text-align: center;
+}
+
+.start-screen {
+    width: 50vw;
+}
+
+
+.start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 200px;
 }
 
 
 #overlay {
-    background-image: url('img/9_intro_outro_screens/start/startscreen_1.png');
+    /* background-image: url('img/9_intro_outro_screens/start/startscreen_1.png'); */
     background-size: cover;
     background-position: right;
     width: 720px;
@@ -53,15 +60,8 @@ h1{
     top: 0px;
 }
 
-#container {
-    position: relative;
-}
 
-button {
-    position: absolute;
-    z-index: 1;
-    top: 13%;
-    left: 48%;
+.start-btn {
     text-align: center;
     background-color: rgba(255, 222, 0, 0.9);
     border: 1px solid #000000;
@@ -72,6 +72,25 @@ button {
     letter-spacing: 6px;
     cursor: pointer;
 }
+
+.restart-btn {
+    text-align: center;
+    background-color: rgba(255, 222, 0, 0.9);
+    border: 1px solid #000000;
+    box-shadow: 6px 6px 0px #000000;
+    transform: skewX(-15deg) translate(100%, -940%);
+    font-size: 30px;
+    padding: 6px;
+    letter-spacing: 6px;
+    cursor: pointer;
+    
+}
+
+button {
+    background: none;
+    border: none;
+}
+
 
 .control-description{
 
@@ -88,6 +107,7 @@ button {
 .control-description span {
     margin-right: 20px;
     margin-left: 10px;
+    font-size: 32px;
 }
 
 .image-control-description{
@@ -95,17 +115,17 @@ button {
     width: 52px;
 }
 
+.mobile-content {
+    display: flex;
+    justify-content: space-between;
+} 
 
-
-
-
-
-
-.d-none{
+.d-none {
     display: none !important;
-}
+  }
 
- /* Smartphones */
+
+ /* Smartphones Canvas*/
  @media only screen and (max-width: 720px){
     canvas {
         width: 100%;
@@ -118,11 +138,36 @@ button {
     }
 }
 
-@media(max-width: 700px){
+/* Smartphones */
+
+@media(max-width: 1000px){
     .control-description{
         display: none;
     }
 }
+
+@media(max-width: 1000px){
+    .start-screen{
+        width: 85vw;
+    }
+}
+
+@media(max-width: 999px){
+    .mobile-description{
+        display: unset !important;
+    }
+}
+
+
+@media(max-width: 430px){
+    .start-btn{
+        font-size: 18px;
+    }
+}
+
+
+
+
 
 
 
