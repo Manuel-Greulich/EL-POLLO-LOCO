@@ -33,7 +33,6 @@ function checkEndscreen() {
     }, 200);
 }
 
-
 function mobileButtonPlay() {
     document.getElementById('btn-left').addEventListener("touchstart", (event) => {
         event.preventDefault();
@@ -75,7 +74,6 @@ function mobileButtonPlay() {
             keyboard.SPACE = false;
     });
 }
-
 
 window.addEventListener("keydown", (e) => {
     if(e.keyCode == 39){

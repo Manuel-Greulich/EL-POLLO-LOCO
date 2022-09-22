@@ -153,7 +153,7 @@ button {
 }
 
 @media(max-width: 999px){
-    .mobile-description{
+    .mobile-hud{
         display: unset !important;
     }
 }
